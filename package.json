@@ -1,6 +1,13 @@
 {
-  "name": "cypress_project",
+  "name": "cypress_automation_exercise_project",
   "version": "1.0.0",
+  "author": "Shariar Khan",
+  "engines": {
+    "node": ">16.0.0"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.5.1"
+  },
   "devDependencies": {
     "cypress": "^13.6.3"
   }

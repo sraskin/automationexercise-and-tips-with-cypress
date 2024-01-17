@@ -13,7 +13,7 @@ Install the following,
 
 1. After completing the installation, clone the repository.
 ```sh
-git clone -
+git clone https://github.com/sraskin/automationexercise-with-cypress.git
 ```
 2. Fetch all the available branches.
 ```sh
