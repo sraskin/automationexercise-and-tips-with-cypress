@@ -1,11 +1,6 @@
-/*
-* TODO:
-16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-17. Click 'Pay and Confirm Order' button
-18. Verify the success message 'Your order has been placed successfully!'
-*/
 import userData from '../fixtures/user_data'
 import randomGenerator from '../fixtures/random_generator'
+import paymentData from '../fixtures/payment_data'
 
 const baseUrl = Cypress.env('base_url')
 const randomString = randomGenerator.random_string(30)
@@ -121,9 +116,19 @@ describe('Add a product and complete the purchase', () => {
         //Enter description in comment text area and click 'Place Order'
         cy.get('.form-control').type(randomString)
         cy.contains('Place Order').click()
+
+        //Input payment details
+        cy.get('[data-qa="name-on-card"]').type(paymentData.payment_1.cardholder_name)
+        cy.get('[data-qa="card-number"]').type(paymentData.payment_1.card_number)
+        cy.get('[data-qa="cvc"]').type(paymentData.payment_1.security_code)
+        cy.get('[data-qa="expiry-month"]').type(paymentData.payment_1.expiration_month)
+        cy.get('[data-qa="expiry-year"]').type(paymentData.payment_1.expiration_year)
+        cy.get('[data-qa="pay-button"]').click()
+
+        //Verify that payment is successful
+        cy.url().should('include', baseUrl + '/payment_done')
+        cy.get('#form').should('be.visible')
+        cy.contains('Congratulations! Your order has been confirmed!').should('be.visible')
+        cy.contains('Continue').click()
     })
 })
-
-/*
-
- */
