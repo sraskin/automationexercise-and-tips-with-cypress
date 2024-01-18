@@ -24,6 +24,7 @@ module.exports = defineConfig({
     //to run the entire folder in interactive mode
     experimentalRunAllSpecs: true,
   },
+  pageLoadTimeout: 80000,
   watchForFileChanges: false,
   video: true,
   screenshots: false,
@@ -32,6 +33,6 @@ module.exports = defineConfig({
     runMode: 2,
     openMode: 0,
   },
-  viewportWidth: 1920,
+  viewportWidth: 1320,
   viewportHeight: 1080,
 })
