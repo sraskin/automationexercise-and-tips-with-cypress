@@ -8,8 +8,6 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
-    ignoreVideos: false,
-    videoOnFailOnly: true,
     code: false,
   },
   e2e: {

@@ -26,19 +26,19 @@ This is demo automation project using Cypress. In this project I have used http:
 18. Verify the success message 'Your order has been placed successfully!'
 
 I followed a recommended design pattern for this project. 
-- I have used Page Object Model (POM) design pattern. 
-  - I have created a separate folder for each page and created a separate file for each page. 
+- I have used Page Object Model (POM) design pattern (in reusable commands) 
+  - [ In Cypress we do not have to use the object-oriented PageObject implementation. We can also move typical logic into reusable Cypress Custom Commands that do not have any internal state and just allow us to reuse code. ]
 - I have created a separate file for each test case. 
 - I have used Cypress fixtures to store the test data. 
 - I have used Cypress commands to create custom commands. 
 - I have used Cypress environment variables to store the environment variables. 
-- I have used Cypress Mochawesome reporter to generate the report.
+- I have used a Cypress Mochawesome reporter to generate the report.
 
 
 ## Installation
 
 Install the following,
-- Install Node.js (>16^ recommended)
+- Install Node.js >16^ recommended (No need to install if you wanted to run in Docker and don't want to run the test in GUI interactive mode)
 - Install Docker (Optional: If you want to run the test in docker container)
 - Git
 

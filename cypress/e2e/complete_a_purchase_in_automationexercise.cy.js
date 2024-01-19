@@ -1,3 +1,25 @@
+/*
+This script will complete the following steps:
+1. Launch browser
+2. Navigate to url 'http://automationexercise.com'
+3. Verify that home page is visible successfully
+4. Add products to cart
+5. Click 'Cart' button
+6. Verify that cart page is displayed
+7. Click Proceed To Checkout
+8. Click 'Register / Login' button
+9. Fill all details in Sign up and create account
+10. Verify 'ACCOUNT CREATED!' And click 'Continue' button
+11. Verify 'Logged in as username' at top
+12.Click 'Cart' button
+13. Click 'Proceed To Checkout' button
+14. Verify Address Details and Review Your Order
+15. Enter description in comment text area and click 'Place Order'
+16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
+17. Click 'Pay and Confirm Order' button
+18. Verify the success message 'Your order has been placed successfully!'
+ */
+
 import userData from '../fixtures/user_data'
 import randomGenerator from '../fixtures/random_generator'
 import paymentData from '../fixtures/payment_data'
@@ -12,10 +34,12 @@ describe('Add a product and complete the purchase', () => {
         //Verify that home page is visible successfully
         cy.url().should('include', baseUrl)
         cy.get('.features_items').should('be.visible')
+
         //Get the first product and click on Add to cart
         cy.get('.product-image-wrapper').then(($items) => {
             cy.wrap($items[0]).contains('Add to cart').click()
         })
+
         //Wait to show the product added to the cart modal
         cy.wait(500)
         //Click on Continue Shopping to close the modal
@@ -44,47 +68,15 @@ describe('Add a product and complete the purchase', () => {
         cy.get('.modal-body').find('a').click()
 
         //fill out the form and submit
-        cy.get('[data-qa="signup-name"]').type(userData.user_1.user_full_name)
-        cy.get('[data-qa="signup-email"]').type(`test_emai_${randomNumber}@johndoe.com`)
-        cy.get('[data-qa="signup-button"]').click()
+        // I have generated a random email address to avoid the error message 'Email already exists'
+        cy.registration(userData.user_1.user_full_name, `test_email_${randomNumber}@johndoe.com`)
 
         //fill out the additional details
-        if (userData.user_1.salutation === 'Mr.') {
-            cy.get('#id_gender1').check()
-        } else if (userData.user_1.salutation === 'Mrs.') {
-            cy.get('#id_gender2').check()
-        }
-        cy.get('[data-qa="password"]').type(userData.user_1.user_password)
-        //choose DOB from dropdown
-        const dobSplit = userData.user_1.date_of_birth.split('/')
-        cy.get('[data-qa="days"]').select(dobSplit[0])
-        cy.get('[data-qa="months"]').select(dobSplit[1])
-        cy.get('[data-qa="years"]').select(dobSplit[2])
-        //fill out the name
-        cy.get('[data-qa="first_name"]').type(userData.user_1.first_name)
-        cy.get('[data-qa="last_name"]').type(userData.user_1.last_name)
-        //fill out the address
-        cy.get('[data-qa="address"]').type(userData.user_1.address)
-        cy.get('[data-qa="country"]').select(userData.user_1.country)
-        cy.get('[data-qa="state"]').type(userData.user_1.state)
-        cy.get('[data-qa="city"]').type(userData.user_1.city)
-        cy.get('[data-qa="zipcode"]').type(userData.user_1.zip_code)
-        cy.get('[data-qa="mobile_number"]').type(userData.user_1.mobile)
-        //complete the registration
-        cy.get('[data-qa="create-account"]').click()
-
-        //Verify that the user is logged in successfully
-        cy.url().should('include', baseUrl + '/account_created')
-        cy.get('#form').should('be.visible')
-        cy.contains('Account Created!').should('be.visible')
-
-        //Click on Continue
-        cy.contains('Continue').click()
+        cy.completeRegistration(userData.user_1)
 
         //Wait for the new page to load and verify that the username is displayed
         cy.wait(1000)
         cy.contains(`Logged in as ${userData.user_1.user_full_name}`).should('be.visible')
-
         //Click on Cart and proceed to checkout
         cy.contains('Cart').click()
         cy.url().should('include', baseUrl + '/view_cart')
@@ -117,13 +109,8 @@ describe('Add a product and complete the purchase', () => {
         cy.get('.form-control').type(randomString)
         cy.contains('Place Order').click()
 
-        //Input payment details
-        cy.get('[data-qa="name-on-card"]').type(paymentData.payment_1.cardholder_name)
-        cy.get('[data-qa="card-number"]').type(paymentData.payment_1.card_number)
-        cy.get('[data-qa="cvc"]').type(paymentData.payment_1.security_code)
-        cy.get('[data-qa="expiry-month"]').type(paymentData.payment_1.expiration_month)
-        cy.get('[data-qa="expiry-year"]').type(paymentData.payment_1.expiration_year)
-        cy.get('[data-qa="pay-button"]').click()
+        //Input payment details and click 'Pay'
+        cy.inputPaymentDetailsAndPay(paymentData.payment_1)
 
         //Verify that payment is successful
         cy.url().should('include', baseUrl + '/payment_done')
