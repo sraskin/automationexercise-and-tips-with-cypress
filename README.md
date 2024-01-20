@@ -37,8 +37,8 @@ I followed a recommended design pattern for this project.
 
 ## Installation
 
-Install the following,
-- Install Node.js >16^ recommended (No need to install if you wanted to run in Docker and don't want to run the test in GUI interactive mode)
+Install the following.
+- Install Node.js >16^ recommended 
 - Install Docker (Optional: If you want to run the test in docker container)
 - Git
 
@@ -46,19 +46,9 @@ Install the following,
 ```sh
 git clone https://github.com/sraskin/automationexercise-with-cypress.git
 ```
-2. Fetch all the available branches.
-```sh
-git fetch --all
-```
-3. Checkout to the 'stable' branch. Because the 'master' branch will only contain stable items that are delivered or for CI pipeline. Stable branch will contain all the updated stable codes that are supposed to be going on live in the future.
-```sh
-git checkout stable
-```
-4. Attempt a pull to ensure you have up-to-date codes
-```sh
-git pull origin stable
-```
-5. Now run,
+2. Verify that you are in the master branch.
+
+3. Then run,
 ```sh
 npm install 
 ```
