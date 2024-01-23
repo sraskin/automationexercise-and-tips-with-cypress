@@ -17,7 +17,7 @@ module.exports = defineConfig({
     // Configure your E2E tests here
     specPattern: "cypress/e2e/**/*.{cy,spec}.{js,ts}",
     'env': {
-      base_url:"https://automationexercise.com"
+      baseUrl:"https://automationexercise.com"
     },
     //to run the entire folder in interactive mode
     experimentalRunAllSpecs: true,

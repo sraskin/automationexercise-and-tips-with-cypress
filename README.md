@@ -26,7 +26,7 @@ This is demo automation project using Cypress. In this project I have used http:
 18. Verify the success message 'Your order has been placed successfully!'
 
 I followed a recommended design pattern for this project. 
-- I have used Page Object Model (POM) design pattern (in reusable commands) 
+- I have used Page Object Model (POM) design pattern (in reusable commands also object oriented approach) 
   - [ In Cypress we do not have to use the object-oriented PageObject implementation. We can also move typical logic into reusable Cypress Custom Commands that do not have any internal state and just allow us to reuse code. ]
 - I have created a separate file for each test case. 
 - I have used Cypress fixtures to store the test data. 
