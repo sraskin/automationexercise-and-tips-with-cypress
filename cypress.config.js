@@ -4,6 +4,7 @@ module.exports = defineConfig({
   projectId: "niztax",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
+    reportDir: "cypress/reports",
     charts: true,
     reportPageTitle: 'Automation Test Report',
     embeddedScreenshots: true,
@@ -19,7 +20,6 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/**/*.{cy,spec}.{js,ts}",
     'env': {
       baseUrl:"https://automationexercise.com",
-      disableTestIsolation: false,
     },
     //to run the entire folder in interactive mode
     experimentalRunAllSpecs: true,
@@ -27,7 +27,7 @@ module.exports = defineConfig({
   },
   pageLoadTimeout: 80000,
   watchForFileChanges: false,
-  video: false,
+  video: true,
   screenshots: false,
   headless: true,
   retries: {

@@ -191,7 +191,9 @@ dist
 .pnp.*
 .idea
 .DS_Store
-/cypress/screenshots*
-/mochawesome-report*
-/cypress/reports/*
-/cypress/videos*
+/cypress/videos/
+/cypress/screenshots/
+/cypress/reports/
+
+
+
