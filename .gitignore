@@ -195,4 +195,3 @@ dist
 /mochawesome-report*
 /cypress/reports/*
 /cypress/videos*
-/package-lock.json
