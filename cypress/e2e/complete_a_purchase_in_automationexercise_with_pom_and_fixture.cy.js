@@ -28,6 +28,9 @@ const randomString = randomGenerator.random_string(30)
 const randomNumber = randomGenerator.random_number(5)
 
 describe('Add a product and complete the purchase', () => {
+    //cypress testioslation true
+
+
     beforeEach(() => {
         cy.fixture('user_data').as('userData')
         cy.fixture('payment_data').as('paymentData')

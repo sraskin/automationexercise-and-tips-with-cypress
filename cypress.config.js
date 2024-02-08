@@ -18,10 +18,12 @@ module.exports = defineConfig({
     // Configure your E2E tests here
     specPattern: "cypress/e2e/**/*.{cy,spec}.{js,ts}",
     'env': {
-      baseUrl:"https://automationexercise.com"
+      baseUrl:"https://automationexercise.com",
+      disableTestIsolation: false,
     },
     //to run the entire folder in interactive mode
     experimentalRunAllSpecs: true,
+    testIsolation: Cypress.env('disableTestIsolation') ? false : true
   },
   pageLoadTimeout: 80000,
   watchForFileChanges: false,
