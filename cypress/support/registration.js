@@ -1,4 +1,4 @@
-const baseUrl = Cypress.env('base_url')
+const baseUrl = Cypress.env('baseUrl')
 
 /**
  * Registers a new user.
