@@ -1,7 +1,32 @@
 {
   "name": "cypress_automation_exercise_project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Shariar Khan",
+  "description": "Cypress Automation Exercise Project",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:firefox": "cypress run --browser firefox",
+    "cypress:run:edge": "cypress run --browser edge",
+    "cypress:run:electron": "cypress run --browser electron",
+    "cypress:run:headless": "cypress run --headless",
+    "cypress:run:chrome:headless": "cypress run --browser chrome --headless",
+    "cypress:run:firefox:headless": "cypress run --browser firefox --headless",
+    "cypress:run:edge:headless": "cypress run --browser edge --headless",
+    "cypress:run:electron:headless": "cypress run --browser electron --headless",
+    "cypress:run:report": "cypress run --reporter mochawesome",
+    "cypress:run:report:headless": "cypress run --reporter mochawesome --headless",
+    "cypress:run:report:chrome": "cypress run --reporter mochawesome --browser chrome",
+    "cypress:run:report:firefox": "cypress run --reporter mochawesome --browser firefox",
+    "cypress:run:report:edge": "cypress run --reporter mochawesome --browser edge",
+    "cypress:run:report:electron": "cypress run --reporter mochawesome --browser electron",
+    "cypress:run:report:chrome:headless": "cypress run --reporter mochawesome --browser chrome --headless",
+    "cypress:run:report:firefox:headless": "cypress run --reporter mochawesome --browser firefox --headless",
+    "cypress:run:report:edge:headless": "cypress run --reporter mochawesome --browser edge --headless",
+    "cypress:run:report:electron:headless": "cypress run --reporter mochawesome --browser electron --headless",
+    "cypress:run:e2e": "npx cypress run e2e"
+  },
   "engines": {
     "node": ">16.0.0"
   },
