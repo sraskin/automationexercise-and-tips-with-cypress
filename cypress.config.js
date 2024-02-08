@@ -25,7 +25,7 @@ module.exports = defineConfig({
   },
   pageLoadTimeout: 80000,
   watchForFileChanges: false,
-  video: true,
+  video: false,
   screenshots: false,
   headless: true,
   retries: {

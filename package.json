@@ -25,7 +25,7 @@
     "cypress:run:report:firefox:headless": "cypress run --reporter mochawesome --browser firefox --headless",
     "cypress:run:report:edge:headless": "cypress run --reporter mochawesome --browser edge --headless",
     "cypress:run:report:electron:headless": "cypress run --reporter mochawesome --browser electron --headless",
-    "cypress:run:e2e": "npx cypress run e2e --video false --reporter mochawesome"
+    "cypress:run:e2e": "npx cypress run e2e"
   },
   "engines": {
     "node": ">16.0.0"
