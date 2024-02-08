@@ -27,10 +27,7 @@ const baseUrl = Cypress.env('baseUrl')
 const randomString = randomGenerator.random_string(30)
 const randomNumber = randomGenerator.random_number(5)
 
-describe('Add a product and complete the purchase', () => {
-    //cypress testioslation true
-
-
+describe('Visit automationexcersise.com, add a product, signup, make payment and complete the purchase and logout', () => {
     beforeEach(() => {
         cy.fixture('user_data').as('userData')
         cy.fixture('payment_data').as('paymentData')
