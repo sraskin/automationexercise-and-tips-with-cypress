@@ -23,7 +23,7 @@ module.exports = defineConfig({
     },
     //to run the entire folder in interactive mode
     experimentalRunAllSpecs: true,
-    testIsolation: Cypress.env('disableTestIsolation') ? false : true
+    testIsolation: false
   },
   pageLoadTimeout: 80000,
   watchForFileChanges: false,
