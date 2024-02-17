@@ -4,6 +4,10 @@
 - Language: Node.js
 - Tools: Cypress
 
+## Scripts
+1. Demo automation ecommerce site automation
+2. Capture all redirection links and other details and save to a file
+
 ## Description
 This is demo automation project using Cypress. In this project I have used http://automationexercise.com site to automate the test case. I have completed below steps on this project,
 1. Launch browser(Chrome/Firefox)
