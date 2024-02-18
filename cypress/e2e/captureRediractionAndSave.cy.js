@@ -17,8 +17,10 @@ describe('Capture Redirections', () => {
         });
 
         cy.visit('http://mac-torrent-download.net').then(() => {
-            // Save the details to your file (modify as needed)
+            // Save the details to the file into the root of the project
             cy.writeFile('redirections.json', JSON.stringify(details, null, 2));
         });
+        //verify that after all the redirection mac-torrent-download.net is loaded on the last
+        cy.url().should('eq', 'http://mac-torrent-download.net/');
     })
 })
