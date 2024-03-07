@@ -2,6 +2,10 @@
   "name": "cypress_automation_exercise_project",
   "version": "1.1.0",
   "author": "Shariar Khan",
+  "keywords": [
+    "cypress",
+    "cypress automation"
+  ],
   "description": "Cypress Automation Exercise Project",
   "scripts": {
     "cypress:open": "cypress open",
@@ -25,13 +29,17 @@
     "cypress:run:report:firefox:headless": "cypress run --reporter mochawesome --browser firefox --headless",
     "cypress:run:report:edge:headless": "cypress run --reporter mochawesome --browser edge --headless",
     "cypress:run:report:electron:headless": "cypress run --reporter mochawesome --browser electron --headless",
-    "cypress:run:e2e": "npx cypress run e2e"
+    "cypress:run:e2e": "npx cypress run e2e",
+    "runner-in-prod-env": "cypress open --env version=prod",
+    "runner-in-stage-env": "cypress open --env version=stage",
+    "runner-in-local-env": "cypress open --env version=local"
   },
   "engines": {
     "node": ">16.0.0"
   },
   "dependencies": {
-    "cypress-mochawesome-reporter": "^3.5.1"
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "prettier": "^3.2.5"
   },
   "devDependencies": {
     "cypress": "^13.6.3"
